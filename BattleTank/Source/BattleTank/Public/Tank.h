@@ -37,4 +37,8 @@ public:
 	
 public:
 	void AimAt(FVector TargetLocation);
+
+private:
+	UPROPERTY(EditAnywhere, Category = Fire)
+	float LaunchSpeed = 100000.f;
 };
