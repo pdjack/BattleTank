@@ -54,7 +54,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 	int32 ViewportSizeX, ViewportSizeY;
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 
-	UE_LOG(LogTemp, Warning, TEXT("ViewportSizeX: %d, ViewportSizeY:%d"), ViewportSizeX, ViewportSizeY)
+	/*UE_LOG(LogTemp, Warning, TEXT("ViewportSizeX: %d, ViewportSizeY:%d"), ViewportSizeX, ViewportSizeY)*/
 
 
 	auto ScreenLocation = FVector2D(ViewportSizeX * CrosshairXLocation, ViewportSizeY * CrosshairYLocation);
