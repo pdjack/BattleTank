@@ -11,14 +11,14 @@ void ATankAIController::BeginPlay()
 	auto Tank = GetAITank();
 	if (Tank != nullptr)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Tank is %s"), *(Tank->GetName()))
+		///UE_LOG(LogTemp, Warning, TEXT("AI Tank is %s"), *(Tank->GetName()))
 	}
 
 	auto TankPlayer = GetWorld()->GetFirstPlayerController()->GetPawn();	
 	
 	if (TankPlayer == nullptr)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Not Found PlayerController!!"));
+		///UE_LOG(LogTemp, Warning, TEXT("Not Found PlayerController!!"));
 	}
 	else
 	{

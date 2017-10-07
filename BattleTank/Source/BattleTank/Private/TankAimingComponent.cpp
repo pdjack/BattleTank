@@ -75,13 +75,13 @@ void UTankAimingComponent::AimAt(FVector WorldSpaceTarget, float LaunchSpeed)
 		MoveBarrel(AimDirection);
 		
 
-		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f , AimSolution found"), Time)
+		///auto Time = GetWorld()->GetTimeSeconds();
+		///UE_LOG(LogTemp, Warning, TEXT("%f , AimSolution found"), Time)
 	}
 	else
 	{
-		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f , AimSolution Not found"), Time)
+		///auto Time = GetWorld()->GetTimeSeconds();
+		///UE_LOG(LogTemp, Warning, TEXT("%f , AimSolution Not found"), Time)
 	}
 }
 
@@ -102,14 +102,14 @@ void UTankAimingComponent::MoveBarrel(FVector AimDirection)
 void UTankAimingComponent::MoveTurret(FVector AimDirection)
 {
 	if (!Turret) { 
-		UE_LOG(LogTemp, Warning, TEXT("Turret == nullptr"));
+		//UE_LOG(LogTemp, Warning, TEXT("Turret == nullptr"));
 		return; 
 	}
 	auto TankName = GetOwner()->GetName();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto BarrelRotator = Turret->GetForwardVector().Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
-	UE_LOG(LogTemp, Warning, TEXT("DeltaRotator   : %s from %s"), *DeltaRotator.ToString(), *TankName);
+	//UE_LOG(LogTemp, Warning, TEXT("DeltaRotator   : %s from %s"), *DeltaRotator.ToString(), *TankName);
 
 	Turret->Rotate(DeltaRotator.Yaw);// it will be clamped to -1 ~ 1 in Azimuth()
 }

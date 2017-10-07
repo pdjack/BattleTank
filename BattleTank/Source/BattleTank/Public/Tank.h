@@ -26,6 +26,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurretReference(UTankTurret* TurretToSet);
 
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	void AimAt(FVector TargetLocation);
+
+	UFUNCTION(BlueprintCallable, Category = Firing)
+	void Fire();
+
 	//virtual void Tick(float DeltaTime) override;
 protected:
 	// Called when the game starts or when spawned
@@ -33,14 +41,7 @@ protected:
 
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
-public:	
-	
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
-public:
-	void AimAt(FVector TargetLocation);
 
 private:
 	UPROPERTY(EditAnywhere, Category = Fire)
