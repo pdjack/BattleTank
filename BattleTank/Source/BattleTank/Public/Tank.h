@@ -46,11 +46,19 @@ protected:
 
 
 private:
-	UPROPERTY(EditAnywhere, Category = Fire)
+	UPROPERTY(EditDefaultsOnly, Category = Fire)
 	float LaunchSpeed = 100000.f;
 
-	UPROPERTY(EditAnywhere, Category = Fire)
+	UPROPERTY(EditDefaultsOnly, Category = Fire)
+	float ReloadTimeInSecond = 3;
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
+	
+
 	UTankBarrel* Barrel = nullptr;
+
+	
+	double LastFireTime = 0;
 };
