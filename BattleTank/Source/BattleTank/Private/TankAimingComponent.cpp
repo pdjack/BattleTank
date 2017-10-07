@@ -13,7 +13,7 @@ UTankAimingComponent::UTankAimingComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bCanEverTick = false;
 
 	// ...
 }
@@ -38,13 +38,13 @@ void UTankAimingComponent::SetTurretReference(UTankTurret * TurretToSet)
 	Turret = TurretToSet;
 }
 
-// Called every frame
-void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
-}
+//// Called every frame
+//void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+//{
+//	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+//
+//	// ...
+//}
 
 void UTankAimingComponent::AimAt(FVector WorldSpaceTarget, float LaunchSpeed)
 {
@@ -111,5 +111,5 @@ void UTankAimingComponent::MoveTurret(FVector AimDirection)
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
 	UE_LOG(LogTemp, Warning, TEXT("DeltaRotator   : %s from %s"), *DeltaRotator.ToString(), *TankName);
 
-	Turret->Azimuth(DeltaRotator.Yaw);// it will be clamped to -1 ~ 1 in Azimuth()
+	Turret->Rotate(DeltaRotator.Yaw);// it will be clamped to -1 ~ 1 in Azimuth()
 }

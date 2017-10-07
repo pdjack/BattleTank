@@ -14,15 +14,15 @@ class BATTLETANK_API UTankTurret : public UStaticMeshComponent
 {
 	GENERATED_BODY()
 public:
-	void Azimuth(float RelativeSpeed);
+	void Rotate(float RelativeSpeed);
 	
 	UPROPERTY(EditAnywhere, Category = Setup)
 	float MaxDegreesPerSecond = 5.f;
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	/*UPROPERTY(EditAnywhere, Category = Setup)
 	float MaxAzimuthDegrees = 170.f;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 	float MinAzimuthDegrees = -170.f;
-	
+	*/
 };
